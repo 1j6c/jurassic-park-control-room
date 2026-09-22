@@ -1,0 +1,5 @@
+Jurassic Park: System Control v1.0.0
+created by 1j6c (github.com/1j6c), September 22, 2026
+tag v1.0.0 commit 656c7430655e4875108308d72137f1e0bd1474d8
+release archive sha256 48b6ccf9c84ad8489f7b4bead6b9d040ea048502a0b5d0ef31ee005e55b7b53a
+author key MCowBQYDK2VwAyEA2wvQnmJewplacogglZ9PLTPHK3Yaoz9RfdM9t7XCUSQ=
