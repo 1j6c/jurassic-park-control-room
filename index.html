@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' blob: data:; connect-src 'self' data: blob:; font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta property="og:title" content="Jurassic Park: System Control">
+<meta property="og:description" content="The Jurassic Park control room, running in your browser. IRIX workstation, live map of the island, and Dennis Nedry about to ruin everyone's night. Ah ah ah, you didn't say the magic word.">
+<meta property="og:image" content="https://1j6c.github.io/jurassic-park-control-room/docs/social-preview.png">
+<meta property="og:url" content="https://1j6c.github.io/jurassic-park-control-room/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="author" content="1j6c">
+<meta name="description" content="The Jurassic Park control room, running in your browser. IRIX workstation, live map of the island, and Dennis Nedry about to ruin everyone's night. Ah ah ah, you didn't say the magic word.">
+<title>Jurassic Park: System Control</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%23000%27/%3E%3Ctext x=%2716%27 y=%2722%27 font-family=%27Menlo,monospace%27 font-size=%2716%27 font-weight=%27700%27 fill=%27%233cff70%27 text-anchor=%27middle%27%3EJP%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/irix.css">
+</head>
+<body>
+<noscript><div id="nojs">This is a 1993 UNIX workstation. It needs JavaScript.</div></noscript>
+<div id="nodesk"><div><b>JURASSIC PARK: SYSTEM CONTROL</b><br><br>This is a control room, not a phone.<br>Come back on a computer with a keyboard. Chrome works best.<br><br><span class="dim">"It's a UNIX system. I know this."</span></div></div>
+
+<!-- Séquence de boot IRIX (plein écran, disparaît à la fin) -->
+<div id="boot"><pre id="boot-text"></pre><div id="boot-hint">press any key to skip</div></div>
+
+<!-- Bureau 4Dwm -->
+<div id="desktop">
+  <div id="wallpaper">
+    <div class="wp-brand">
+      <div class="wp-logo">JURASSIC PARK</div>
+      <div class="wp-sub">SYSTEM CONTROL · ISLA NUBLAR · InGen Systems Group</div>
+      <div class="wp-sub" style="opacity:.6">build 1j6c · 2026</div>
+    </div>
+  </div>
+
+  <div id="toolchest">
+    <div class="tc-title">Toolchest</div>
+    <div class="tc-item" data-menu="desktop">Desktop<div class="tc-menu" id="tc-desktop"></div></div>
+    <div class="tc-item" data-menu="system">System<div class="tc-menu" id="tc-system"></div></div>
+  </div>
+
+  <div id="clockbar">
+    <span id="cb-site">ISLA NUBLAR</span>
+    <span id="cb-date">Fri 11 Jun 1993</span>
+    <span id="cb-time">18:48:00</span>
+    <span id="cb-storm">STORM ETA 25:00</span>
+    <span id="cb-ship">ANNE B DEP 19:00</span>
+    <span id="cb-speed" title="time scale">3×</span>
+    <span id="cb-mute" title="sound">♪</span>
+  </div>
+
+  <div id="windows"></div>
+  <div id="iconbar"></div>
+  <canvas id="glass" width="72" height="104" title="Cup of water. Watch it."></canvas>
+</div>
+
+<!-- Arrêt total (shutdown) -->
+<div id="halt" hidden>
+  <div id="halt-text"></div>
+</div>
+
+<!-- Cabane de maintenance : disjoncteurs -->
+<div id="shed" hidden></div>
+
+<!-- Effets globaux -->
+<div id="ripple"></div>
+<div id="flash"></div>
+<div id="crt"></div>
+
+<script src="js/core.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/wm.js"></script>
+<script src="js/fs.js"></script>
+<script src="js/island.js"></script>
+<script src="js/panels.js"></script>
+<script src="js/shell.js"></script>
+<script src="js/fsn.js"></script>
+<script src="js/nedry.js"></script>
+<script src="js/scenario.js"></script>
+<script src="js/boot.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+name: release
+on:
+  push:
+    tags: ['v*']
+permissions:
+  contents: write
+  id-token: write
+  attestations: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the archive
+        run: |
+          NAME="jurassic-park-control-room-${GITHUB_REF_NAME}"
+          mkdir -p "dist/$NAME"
+          cp -r index.html css js start.sh start.bat LICENSE README.md CONTRIBUTING.md docs "dist/$NAME/"
+          (cd dist && zip -qr "$NAME.zip" "$NAME")
+          sha256sum "dist/$NAME.zip" | tee "dist/$NAME.zip.sha256"
+      - name: Attest build provenance
+        uses: actions/attest-build-provenance@v2
+        with:
+          subject-path: dist/*.zip
+      - name: Publish the release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dist/*.zip
+            dist/*.sha256
+          generate_release_notes: true
